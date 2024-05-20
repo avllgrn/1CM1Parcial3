@@ -1,19 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int main(void){
 
     int i;
-    int ini,fin,dec;
+    int ini,fin,paso;
 
     printf("Ingresa ini ");scanf("%d",&ini);
     printf("Ingresa fin ");scanf("%d",&fin);
-    printf("Ingresa dec ");scanf("%d",&dec);
+    printf("Ingresa paso ");scanf("%d",&paso);
+    paso = abs(paso);
 
-    i=ini;
-    while(i >= fin){
-        printf("%d ",i);
-        i = i-dec;
+    if(ini <= fin){
+
+        i=ini;
+        while(i <= fin){
+            printf("%d ",i);
+            i = i+paso;
+        }
+
+    }
+    else{
+
+        i=ini;
+        while(i >= fin){
+            printf("%d ",i);
+            i = i-paso;
+        }
+
     }
 
     return 0;
