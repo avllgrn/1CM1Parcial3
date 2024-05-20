@@ -3,10 +3,10 @@
 
 int main(void){
 
-    for( ; 0 ; ){//Mientras la condicion sea verdadera (1)
+    do{//Mientras la condicion sea verdadera (1)
         //Repite este conjunto de instrucciones
         printf("Hola! =^) ");
-    }
-    //El conjunto de instrucciones NO se ejecuta NI una vez
+    }while( 0 );
+    //El conjunto de instrucciones SE ejecuta al menos UNA vez
     return 0;
 }
