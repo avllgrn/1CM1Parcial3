@@ -5,10 +5,10 @@ int main(void){
 
     int i;
 
-    i=10;
-    while(i >= 1){
+    i=50;
+    while(i > 5){
         printf("%d ",i);
-        i = i-1;
+        i = i-5;
     }
 
     return 0;
