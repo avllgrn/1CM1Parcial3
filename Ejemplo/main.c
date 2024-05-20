@@ -4,16 +4,16 @@
 int main(void){
 
     int i;
-    int ini,fin,inc;
+    int ini,fin,dec;
 
     printf("Ingresa ini ");scanf("%d",&ini);
     printf("Ingresa fin ");scanf("%d",&fin);
-    printf("Ingresa inc ");scanf("%d",&inc);
+    printf("Ingresa dec ");scanf("%d",&dec);
 
     i=ini;
-    while(i <= fin){
+    while(i >= fin){
         printf("%d ",i);
-        i = i+inc;
+        i = i-dec;
     }
 
     return 0;
