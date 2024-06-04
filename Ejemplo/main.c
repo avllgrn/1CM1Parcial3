@@ -6,29 +6,45 @@ int main(void){
     int VInt[10];
     float VFloat[10];
     char VChar[10];
+    int i;
 
-    VChar[3] = '@';
-    printf("Ingresa un caracter ");
-    scanf("%c",&VChar[9]);
-    printf("VChar[%d] = %c\nVChar[%d] = %c\n\n",3,VChar[3],9,VChar[9]);
+    printf("VInt\n\n");
+    for(i=0; i<10; i++)//Se muestra arreglo con basura
+        printf("%d\n", VInt[i]);
 
-    VInt[3] = 5;
-    printf("Ingresa un entero ");
-    scanf("%d",&VInt[9]);
-    VInt[6] = VInt[3] + VInt[9];
+    printf("\n\n");
 
-    printf("%d + %d = %d\n\n",VInt[3], VInt[9], VInt[6]);
+    printf("VFloat\n\n");
+    for(i=0; i<10; i++)//Se muestra arreglo con basura
+        printf("%f\n", VFloat[i]);
 
+    printf("\n\n");
 
-    VFloat[3] = 3.4;
+    printf("VChar\n\n");
+    for(i=0; i<10; i++)//Se muestra arreglo con basura
+        printf("%c\n", VChar[i]);
 
-    printf("Ingresa un float ");
-    scanf("%f",&VFloat[9]);
+    printf("\n\n");
+    system("pause");
+    system("cls");
 
-    VFloat[6] = VFloat[3] + VFloat[9];
+    printf("VInt\n\n");
+    for(i=0; i<10; i++)//Se muestra arreglo con basura
+        printf("VInt[%d] = %d\n",i,VInt[i]);
 
-    printf("%f + %f = %f\n\n",VFloat[3], VFloat[9], VFloat[6]);
+    printf("\n\n");
 
+    printf("VFloat\n\n");
+    for(i=0; i<10; i++)//Se muestra arreglo con basura
+        printf("VFloat[%d] = %f\n",i,VFloat[i]);
+
+    printf("\n\n");
+
+    printf("VChar\n\n");
+    for(i=0; i<10; i++)//Se muestra arreglo con basura
+        printf("VChar[%d] = %c\n",i,VChar[i]);
+
+    printf("\n\n");
 
     return 0;
 }
