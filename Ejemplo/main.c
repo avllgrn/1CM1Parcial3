@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void serieFibonacci(int n);
+int fibonacci(int n);
 
 int main(void){
     int V[50];
@@ -8,24 +8,23 @@ int main(void){
     printf("Ingresa n ");
     scanf("%d",&n);
 
-    serieFibonacci(n);
+    printf("fibonacci(%d) = %d",n,fibonacci(n));
 
     return 0;
 }
 
-void serieFibonacci(int n){
+int fibonacci(int n){
     int a, b, c, i;
-    a=0;
-    b=1;
-    if(n==0)
-        printf("%d ",a);
+    if(n==0||n==1)
+        return n;
     else{
-        printf("%d %d ",a,b);
+        a=0;
+        b=1;
         for(i=2; i<=n; i++){
             c=a+b;
             a=b;
             b=c;
-            printf("%d ",c);
         }
+        return c;
     }
 }
