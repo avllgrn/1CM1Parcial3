@@ -1,59 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+int esPrimo(int x);
 
 int main(void){
+    int n, divisor;
+    printf("Ingresa n ");
+    scanf("%d",&n);
+    divisor = esPrimo(n);
+    if(divisor == 1)
+        printf("\n\n%d ES primo.\n\n",n);
+    else
+        printf("\n\n%d NO es primo... Es divisible entre %d.\n\n",n,divisor);
+    return 0;
+}
 
-    int VInt[10];
-    float VFloat[10];
+int esPrimo(int x){
     int i;
 
-    printf("VInt\n\n");
-    for(i=0; i<10; i++)//Se muestra arreglo con basura (sin inicializarse)
-        printf("VInt[%d] = %d\n",i,VInt[i]);
+    for(i=2; i<x; i++)
+        if(x%i == 0)//Si algun numero divide a x, no es primo,
+            return i;//deja de dividirse, y se retorna el numero que lo divide
 
-    printf("\n\n");
-
-    printf("VFloat\n\n");
-    for(i=0; i<10; i++)//Se muestra arreglo con basura (sin inicializarse)
-        printf("VFloat[%d] = %f\n",i,VFloat[i]);
-
-    printf("\n\n");
-
-
-    printf("\n\n");
-    system("pause");
-    system("cls");
-
-    printf("Ingresa datos enteros\n\n");
-
-    for(i=0; i<10; i++){//Se pide un vector, posicion por posicion
-        printf("VInt[%d] ",i);
-        scanf("%d",&VInt[i]);
-    }
-
-    printf("Ingresa datos flotantes\n\n");
-
-    for(i=0; i<10; i++){//Se pide un vector, posicion por posicion
-        printf("VFloat[%d] ",i);
-        scanf("%f",&VFloat[i]);
-    }
-
-
-    printf("\n\n");
-    system("pause");
-    system("cls");
-
-    printf("VInt\n\n");
-    for(i=0; i<10; i++)//Se muestra arreglo sin basura (inicializado)
-        printf("VInt[%d] = %d\n",i,VInt[i]);
-
-    printf("\n\n");
-
-    printf("VFloat\n\n");
-    for(i=0; i<10; i++)//Se muestra arreglo sin basura (inicializado)
-        printf("VFloat[%d] = %f\n",i,VFloat[i]);
-
-    printf("\n\n");
-
-    return 0;
+    return 1;//Si ningun numero dividio a x, es primo y retorna 1
 }
