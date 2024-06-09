@@ -3,12 +3,13 @@
 int fibonacci(int n);
 
 int main(void){
-    int V[50];
-    int n;
+    int i,n;
     printf("Ingresa n ");
     scanf("%d",&n);
 
-    printf("fibonacci(%d) = %d",n,fibonacci(n));
+    printf("\n\nx\t| fibonacci(x)\n\n");
+    for(i=0; i<=n; i++)
+        printf("%d\t| %d\n",i,fibonacci(i));
 
     return 0;
 }
