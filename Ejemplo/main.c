@@ -1,31 +1,31 @@
 #include <stdio.h>
 
-int esPrimo(int x);
+void serieFibonacci(int n);
 
 int main(void){
     int V[50];
-    int i, j, n;
+    int n;
     printf("Ingresa n ");
     scanf("%d",&n);
 
-    for(i=0, j=1; i<n; j++) //Se llenaran n posiciones con primos desde 1 (j)
-        if(esPrimo(j)==1){
-            V[i] = j;
-            i++;
-        }
-
-    for(i=0; i<n; i++)
-        printf("V[%d] = %d\n",i,V[i]);
+    serieFibonacci(n);
 
     return 0;
 }
 
-int esPrimo(int x){
-    int i;
-
-    for(i=2; i<x; i++)
-        if(x%i == 0)//Si algun numero divide a x, no es primo,
-            return i;//deja de dividirse, y se retorna el numero que lo divide
-
-    return 1;//Si ningun numero dividio a x, es primo y retorna 1
+void serieFibonacci(int n){
+    int a, b, c, i;
+    a=0;
+    b=1;
+    if(n==0)
+        printf("%d ",a);
+    else{
+        printf("%d %d ",a,b);
+        for(i=2; i<=n; i++){
+            c=a+b;
+            a=b;
+            b=c;
+            printf("%d ",c);
+        }
+    }
 }
