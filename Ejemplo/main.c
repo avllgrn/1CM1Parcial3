@@ -4,18 +4,17 @@ int esPrimo(int x);
 
 int main(void){
     int V[50];
-    int i, j, n, nPrimos;
+    int i, j, n;
     printf("Ingresa n ");
     scanf("%d",&n);
 
-    for(j=1, i=0; j<n; j++) //j es contador de 1 a n
+    for(i=0, j=1; i<n; j++) //Se llenaran n posiciones con primos desde 1 (j)
         if(esPrimo(j)==1){
-            V[i] = j;       //i es contador de posiciones
+            V[i] = j;
             i++;
         }
-    nPrimos = i;            //i es la cantidad de primos entre 1 y n
 
-    for(i=0; i<nPrimos; i++)
+    for(i=0; i<n; i++)
         printf("V[%d] = %d\n",i,V[i]);
 
     return 0;
