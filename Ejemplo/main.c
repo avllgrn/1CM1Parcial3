@@ -1,31 +1,19 @@
 #include <stdio.h>
-
-int fibonacci(int n);
+#include <stdlib.h>
+#include <time.h>
 
 int main(void){
+    srand(time(NULL));
+    int V[50];
     int i,n;
     printf("Ingresa n ");
     scanf("%d",&n);
 
-    printf("\n\nx\t| fibonacci(x)\n\n");
-    for(i=0; i<=n; i++)
-        printf("%d\t| %d\n",i,fibonacci(i));
+    for(i=0; i<n; i++)
+        V[i] = rand()%100;
+
+    for(i=0; i<n; i++)
+        printf("V[%d] = %d\n",i,V[i]);
 
     return 0;
-}
-
-int fibonacci(int n){
-    int a, b, c, i;
-    if(n==0||n==1)
-        return n;
-    else{
-        a=0;
-        b=1;
-        for(i=2; i<=n; i++){
-            c=a+b;
-            a=b;
-            b=c;
-        }
-        return c;
-    }
 }
