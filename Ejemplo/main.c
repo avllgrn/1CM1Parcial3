@@ -4,16 +4,16 @@
 
 int main(void){
     srand(time(NULL));
-    int V[50];
+    float Califs[50];
     int i,n;
     printf("Ingresa n ");
     scanf("%d",&n);
 
     for(i=0; i<n; i++)
-        V[i] = rand()%100;
+        Califs[i] = (rand()%101)/10.0;
 
     for(i=0; i<n; i++)
-        printf("V[%d] = %d\n",i,V[i]);
+        printf("Califs[%d] = %f\n",i,Califs[i]);
 
     return 0;
 }
