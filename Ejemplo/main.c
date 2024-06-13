@@ -1,19 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+
+void leeVector(float X[50], int tam);
+void muestraVector(float X[50], int tam);
 
 int main(void){
-    srand(time(NULL));
-    float Califs[50];
-    int i,n;
-    printf("Ingresa n ");
-    scanf("%d",&n);
+    float V[50];
+    int n;
 
-    for(i=0; i<n; i++)
-        Califs[i] = (rand()%101)/10.0;
+    printf("Dame n ");scanf("%d",&n);
 
-    for(i=0; i<n; i++)
-        printf("Califs[%d] = %f\n",i,Califs[i]);
+    leeVector(V,n);
+    system("pause");
+    system("cls");
+    muestraVector(V,n);
 
     return 0;
+}
+
+void leeVector(float X[50], int tam){
+    int i;
+    for(i=0; i<tam; i++){
+        printf("Ingresa [%d] ",i);
+        scanf("%f",&X[i]);
+    }
+}
+void muestraVector(float X[50], int tam){
+    int i;
+    for(i=0; i<tam; i++)
+        printf("[%d] = %f\n",i,X[i]);
 }
