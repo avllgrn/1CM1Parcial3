@@ -1,50 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-void generaVectorAleatorio(float X[50], int tam);
-void muestraVector(float X[50], int tam);
-void ordenaVectorConBurbuja(float X[50], int tam);
 
 int main(void){
-    srand(time(NULL));
-    float Califs[50];
-    int i,n;
-    printf("Ingresa n ");
-    scanf("%d",&n);
+    int i,j,m,n;
 
-    generaVectorAleatorio(Califs,n);
-    printf("\n\nV\n");
-    muestraVector(Califs,n);
-    printf("\n\n");
-    system("pause");
-    ordenaVectorConBurbuja(Califs,n);
-    printf("\n\nV\n");
-    muestraVector(Califs,n);
-    printf("\n\n");
+    printf("Ingresa m ");scanf("%d",&m);
+    printf("Ingresa n ");scanf("%d",&n);
 
-    return 0;
-}
-
-void generaVectorAleatorio(float X[50], int tam){
-    int i;
-    for(i=0; i<tam; i++)
-        X[i] = rand()%100/10.0;
-}
-void muestraVector(float X[50], int tam){
-    int i;
-    for(i=0; i<tam; i++)
-        printf("[%d] = %f\n",i,X[i]);
-}
-void ordenaVectorConBurbuja(float X[50], int tam){
-    int i, veces;
-    float aux;
-    for(veces=1; veces<tam; veces++){
-        for(i=0; i<tam-1; i++){
-            if(X[i+1] < X[i]){
-                aux = X[i+1];
-                X[i+1] = X[i];
-                X[i] = aux;
-            }
+    for(i=0; i<m; i++){
+        for(j=0; j<n; j++){
+            printf("i=%d\tj=%d\n",i,j);
         }
     }
+
+    return 0;
 }
