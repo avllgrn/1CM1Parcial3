@@ -8,7 +8,7 @@ int main(void){
 
     for(i=0; i<m; i++){
         for(j=0; j<n; j++){
-            printf("i=%dj=%d\t",i,j);
+            printf("[%d][%d]\t",i,j);
         }
         printf("\n");
     }
