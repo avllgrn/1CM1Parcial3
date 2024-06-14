@@ -5,19 +5,21 @@
 int main(void){
     srand(time(NULL));
     int M[50][50];
-    int i,j,m,n;
+    int i,j,n;
 
-    printf("Ingresa m ");scanf("%d",&m);
     printf("Ingresa n ");scanf("%d",&n);
 
-    for(i=0; i<m; i++){
+    for(i=0; i<n; i++){
         for(j=0; j<n; j++){
-            M[i][j] = rand()%100;
+            if(i==j)
+                M[i][j] = 1;
+            else
+                M[i][j] = 0;
         }
     }
 
     printf("\nM\n");
-    for(i=0; i<m; i++){
+    for(i=0; i<n; i++){
         for(j=0; j<n; j++){
             printf("%d\t",M[i][j]);
         }
