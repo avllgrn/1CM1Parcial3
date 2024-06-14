@@ -4,40 +4,72 @@
 
 int main(void){
     srand(time(NULL));
-    int M[50][50],MT[50][50];
-    int i,j,m,n,mT,nT;
+    int A[50][50],B[50][50],C[50][50],D[50][50];
+    int i,j,mA,nA,mB,nB,mC,nC,mD,nD;
 
-    printf("Ingresa m ");scanf("%d",&m);
-    printf("Ingresa n ");scanf("%d",&n);
-    mT = n;
-    nT = m;
+    printf("Ingresa mA ");scanf("%d",&mA);
+    printf("Ingresa nA ");scanf("%d",&nA);
+    printf("Ingresa mB ");scanf("%d",&mB);
+    printf("Ingresa nB ");scanf("%d",&nB);
 
-    for(i=0; i<m; i++){
-        for(j=0; j<n; j++){
-            M[i][j] = rand()%100;
+    if(mA!=mB || nA!=nB)
+        printf("Error!!! NO puede ni sumarse ni restarse...\n\n");
+    else{
+        for(i=0; i<mA; i++){
+            for(j=0; j<nA; j++){
+                A[i][j] = rand()%10;
+            }
+        }
+
+        for(i=0; i<mB; i++){
+            for(j=0; j<nB; j++){
+                B[i][j] = rand()%10;
+            }
+        }
+
+        mC=mA;
+        nC=nB;
+        for(i=0; i<mC; i++){
+            for(j=0; j<nC; j++){
+                C[i][j] = A[i][j]+B[i][j];
+            }
+        }
+        mD=mA;
+        nD=nB;
+        for(i=0; i<mD; i++){
+            for(j=0; j<nD; j++){
+                D[i][j] = A[i][j]-B[i][j];
+            }
+        }
+
+        printf("\nA\n");
+        for(i=0; i<mA; i++){
+            for(j=0; j<nA; j++){
+                printf("%d\t",A[i][j]);
+            }
+            printf("\n");
+        }
+        printf("\nB\n");
+        for(i=0; i<mB; i++){
+            for(j=0; j<nB; j++){
+                printf("%d\t",B[i][j]);
+            }
+            printf("\n");
+        }
+        printf("\nC = A+B\n");
+        for(i=0; i<mC; i++){
+            for(j=0; j<nC; j++){
+                printf("%d\t",C[i][j]);
+            }
+            printf("\n");
+        }
+        printf("\nD = A-B\n");
+        for(i=0; i<mD; i++){
+            for(j=0; j<nD; j++){
+                printf("%d\t",D[i][j]);
+            }
+            printf("\n");
         }
     }
-
-    for(i=0; i<m; i++){
-        for(j=0; j<n; j++){
-            MT[j][i] = M[i][j];
-        }
-    }
-
-    printf("\nM\n");
-    for(i=0; i<m; i++){
-        for(j=0; j<n; j++){
-            printf("%d\t",M[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\nMT\n");
-    for(i=0; i<mT; i++){
-        for(j=0; j<nT; j++){
-            printf("%d\t",MT[i][j]);
-        }
-        printf("\n");
-    }
-
     return 0;
 }
