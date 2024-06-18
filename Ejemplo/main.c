@@ -1,75 +1,103 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
+void muestraIzquierdaDerechaArribaAbajo(int m, int n, int X[50][50]);
+void rellenaIzquierdaDerechaArribaAbajo(int m, int n, int X[50][50]);
+void rellenaArribaAbajoIzquierdaDerecha(int m, int n, int X[50][50]);
+void rellenaDerechaIzquierdaArribaAbajo(int m, int n, int X[50][50]);
+void rellenaArribaAbajoDerechaIzquierda(int m, int n, int X[50][50]);
+void rellenaIzquierdaDerechaAbajoArriba(int m, int n, int X[50][50]);
+void rellenaAbajoArribaIzquierdaDerecha(int m, int n, int X[50][50]);
+void rellenaDerechaIzquierdaAbajoArriba(int m, int n, int X[50][50]);
+void rellenaAbajoArribaDerechaIzquierda(int m, int n, int X[50][50]);
 
 int main(void){
-    srand(time(NULL));
-    int A[50][50],B[50][50],C[50][50],D[50][50];
-    int i,j,mA,nA,mB,nB,mC,nC,mD,nD;
+    int M[50][50],m,n;
+    printf("Ingresa m ");scanf("%d",&m);
+    printf("Ingresa n ");scanf("%d",&n);
 
-    printf("Ingresa mA ");scanf("%d",&mA);
-    printf("Ingresa nA ");scanf("%d",&nA);
-    printf("Ingresa mB ");scanf("%d",&mB);
-    printf("Ingresa nB ");scanf("%d",&nB);
+    rellenaIzquierdaDerechaArribaAbajo(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
 
-    if(mA!=mB || nA!=nB)
-        printf("Error!!! NO puede ni sumarse ni restarse...\n\n");
-    else{
-        for(i=0; i<mA; i++){
-            for(j=0; j<nA; j++){
-                A[i][j] = rand()%10;
-            }
-        }
+    rellenaArribaAbajoIzquierdaDerecha(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
 
-        for(i=0; i<mB; i++){
-            for(j=0; j<nB; j++){
-                B[i][j] = rand()%10;
-            }
-        }
+    rellenaDerechaIzquierdaArribaAbajo(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
 
-        mC=mA;
-        nC=nB;
-        for(i=0; i<mC; i++){
-            for(j=0; j<nC; j++){
-                C[i][j] = A[i][j]+B[i][j];
-            }
-        }
-        mD=mA;
-        nD=nB;
-        for(i=0; i<mD; i++){
-            for(j=0; j<nD; j++){
-                D[i][j] = A[i][j]-B[i][j];
-            }
-        }
+    rellenaArribaAbajoDerechaIzquierda(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
 
-        printf("\nA\n");
-        for(i=0; i<mA; i++){
-            for(j=0; j<nA; j++){
-                printf("%d\t",A[i][j]);
-            }
-            printf("\n");
-        }
-        printf("\nB\n");
-        for(i=0; i<mB; i++){
-            for(j=0; j<nB; j++){
-                printf("%d\t",B[i][j]);
-            }
-            printf("\n");
-        }
-        printf("\nC = A+B\n");
-        for(i=0; i<mC; i++){
-            for(j=0; j<nC; j++){
-                printf("%d\t",C[i][j]);
-            }
-            printf("\n");
-        }
-        printf("\nD = A-B\n");
-        for(i=0; i<mD; i++){
-            for(j=0; j<nD; j++){
-                printf("%d\t",D[i][j]);
-            }
-            printf("\n");
-        }
-    }
+    rellenaIzquierdaDerechaAbajoArriba(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
+
+    rellenaAbajoArribaIzquierdaDerecha(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
+
+    rellenaDerechaIzquierdaAbajoArriba(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
+
+    rellenaAbajoArribaDerechaIzquierda(m,n,M);
+    muestraIzquierdaDerechaArribaAbajo(m,n,M);
+
     return 0;
+}
+
+void muestraIzquierdaDerechaArribaAbajo(int m, int n, int X[50][50]){//Siempre se muestra, De izquierda a Derecha, De arriba hacia abajo
+    int i,j;
+    for(i=0; i<m; i++){
+        for(j=0; j<n; j++){
+            printf("%d\t",X[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n\n");
+}
+void rellenaIzquierdaDerechaArribaAbajo(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(i=0; i<m; i++)
+        for(j=0; j<n; j++)
+            X[i][j] = cont++;
+
+}
+void rellenaArribaAbajoIzquierdaDerecha(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(j=0; j<n; j++)
+        for(i=0; i<m; i++)
+            X[i][j] = cont++;
+}
+void rellenaDerechaIzquierdaArribaAbajo(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(i=0; i<m; i++)
+        for(j=n-1; j>=0; j--)
+            X[i][j] = cont++;
+}
+void rellenaArribaAbajoDerechaIzquierda(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(j=n-1; j>=0; j--)
+        for(i=0; i<m; i++)
+            X[i][j] = cont++;
+}
+void rellenaIzquierdaDerechaAbajoArriba(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(i=m-1; i>=0; i--)
+        for(j=0; j<n; j++)
+            X[i][j] = cont++;
+}
+void rellenaAbajoArribaIzquierdaDerecha(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(j=0; j<n; j++)
+        for(i=m-1; i>=0; i--)
+            X[i][j] = cont++;
+}
+void rellenaDerechaIzquierdaAbajoArriba(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(i=m-1; i>=0; i--)
+        for(j=n-1; j>=0; j--)
+            X[i][j] = cont++;
+}
+void rellenaAbajoArribaDerechaIzquierda(int m, int n, int X[50][50]){
+    int i,j,cont=1;
+    for(j=n-1; j>=0; j--)
+        for(i=m-1; i>=0; i--)
+            X[i][j] = cont++;
 }
